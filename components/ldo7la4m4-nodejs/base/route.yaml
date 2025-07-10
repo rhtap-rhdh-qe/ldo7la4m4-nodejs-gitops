@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: ldo7la4m4-nodejs
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: ldo7la4m4-nodejs 
+  name: ldo7la4m4-nodejs
+spec:
+  port:
+    targetPort: 3001 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: ldo7la4m4-nodejs
+    weight: 100 
